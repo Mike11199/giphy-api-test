@@ -8,7 +8,7 @@ const img = document.getElementById('catgif_1');
 async function getCats() {
     
     try {
-        fetch('https://api.giphy.com/v1/gifs/translate?api_key=Y4I1yn9htIQM27xALedrV4xYazIepPqE&s=grumpy cat', {mode: 'cors'})
+        const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=Y4I1yn9htIQM27xALedrV4xYazIepPqE&s=grumpy cat', {mode: 'cors'})
         const catData = await response.json();
         console.log(catData);
         img.src = catData.data.images.original.url;
